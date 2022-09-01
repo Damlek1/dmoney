@@ -1,9 +1,15 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
-import {FooterContainer, FooterWrap,FooterLinksContainer,FooterLinksWrapper,FooterLinkItems, FooterLinkTitle,FooterLink,SocialMedia,SocialMediaWrap,SocialLogo,WebsiteRights,SocialIconLink, SocialIcons} from './index'
+import {FooterContainer, FooterWrap,FooterLinksContainer,FooterLinksWrapper,FooterLinkItems,
+    FooterLinkTitle,FooterLink,SocialMedia,SocialMediaWrap,SocialLogo,WebsiteRights,SocialIconLink, SocialIcons} from './index'
+import { animateScroll as scroll } from 'react-scroll'
+
 
 
 const Footer = () => {
+    const toggleHome = () => {
+        scroll.scrollToTop()
+      }
   return (
     <>
     <FooterContainer>
@@ -43,10 +49,9 @@ const Footer = () => {
             </FooterLinksContainer>
             <SocialMedia>
                 <SocialMediaWrap>
-                    <SocialLogo to='/'>dolla</SocialLogo>
+                    <SocialLogo to='/' onClick={toggleHome}>dolla</SocialLogo>
                     <WebsiteRights>dolla &copy; {new Date().getFullYear()} All rights reserved.</WebsiteRights>
                     <SocialIcons>
-
                     <SocialIconLink href='//www.facebook.com' target='_blank' aria-label='Facebook'>
                         <FaFacebook />
                     </SocialIconLink>
